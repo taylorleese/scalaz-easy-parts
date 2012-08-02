@@ -1,0 +1,15 @@
+{ "name": "Scalaz: The Easy Parts", "sections": 
+  [ 
+    {"section":"01_overview"},
+    {"section":"02_optionw"},
+    {"section":"03_booleanw"},
+    {"section":"04_equal"},
+    {"section":"05_zero"},
+    {"section":"06_nonemptylist"},
+    {"section":"07_validation"},
+    {"section":"08_io"},
+    {"section":"09_actor"},
+    {"section":"10_promise"},
+    {"section":"11_summary"}
+  ]
+}
