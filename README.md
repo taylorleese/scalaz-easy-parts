@@ -6,3 +6,5 @@ git clone git@github.com:taylorleese/scalaz-easy-parts.git
 cd scalaz-easy-parts
 showoff serve
 ```
+
+Then go to http://localhost:9090.
