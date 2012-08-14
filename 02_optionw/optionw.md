@@ -18,8 +18,12 @@
 
     @@@ scala
     val x: Option[T] = ...
-    val y: Option[A] = {
-      x some { ... } none { ... }
+    val y: A = {
+      x some { 
+        // s: T => A 
+      } none { 
+        // n: => A
+      }
     } 
 
 !SLIDE
@@ -28,9 +32,9 @@
 
     @@@ scala
     val x: Option[T] = ...
-    val y: Option[A] = x.fold(
-      some = s => { ... }, 
-      none = { ... }
+    val y: A = x.fold(
+      some = s => { ... }, // s: T => A
+      none = { ... } // n: => A
     )
 
 !SLIDE
@@ -48,10 +52,16 @@
     @@@ scala
     val x: Option[T] = ...
     val y: T = x | { ... }
+    
+## Defined as...
+
+    @@@ scala
+    def |(a: => A): A = value getOrElse a
 
 !SLIDE 
 # .some and none[T]
 
     @@@ scala
-    val x: Option[String] = "foo".some
-    val x: Option[String] = none[String]
+    val x = "foo".some
+    val x = none[String]
+    val x: Option[String] = none

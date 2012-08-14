@@ -10,6 +10,8 @@
     val x: Boolean = ~w // w | false
     val y: Option[String] = ...
     val z: String = ~y // y | ""
+
+.notes unary_~ defined in OptionW
     
 !SLIDE
 # Defining your own Zero[A]

@@ -35,7 +35,7 @@
     @@@ scala
     val x: Boolean = ...
     val y: A = x.fold(
-      a = { ... },
-      b = { ... }
+      a = { ... }, // if true, a: => A
+      b = { ... }  // if false, b: => A
     }
 

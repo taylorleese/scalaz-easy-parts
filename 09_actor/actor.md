@@ -18,6 +18,7 @@
     @@@ scala
     val a: Actor[() => Unit] = ...
     def f(): Unit = ...
-    a { () => f() } // using apply
+    a { () => f() }   // using apply
     a ! { () => f() } // using !
 
+.notes actors don't return anything

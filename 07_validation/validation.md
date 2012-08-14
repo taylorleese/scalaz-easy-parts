@@ -12,15 +12,17 @@
       case e => ...
     }
 
+.notes no checked exceptions in Scala
+
 !SLIDE
 # WTF is Validation?
 ## Success => right side, Failure => left side
 
     @@@ scala
-    class Success[E, A](a: A) 
+    final case class Success[E, A](a: A) 
       extends Validation[E, A]
 
-    class Failure[E, A](e: E) 
+    final case class Failure[E, A](e: E) 
       extends Validation[E, A]
 
 !SLIDE
@@ -59,10 +61,10 @@
 # fold
 
     @@@ scala
-    val r: Validation[Throwable, A] = ...
+    val r: Validation[E, A] = ...
     val x: X = r.fold(
-      success = s => { ... },
-      failure = f => { ... }
+      success = s => { ... }, // A => X
+      failure = f => { ... }  // E => X
     )
 
 !SLIDE
@@ -80,4 +82,5 @@
     type ValidationNEL[E, X] = 
       Validation[NonEmptyList[E], X]
 
+.notes json parsing a la lift-json-scalaz
 
